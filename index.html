@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dongeon & Dragons</title>
+    </head>
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/page.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;800&family=Philosopher:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <script src="./app.js"></script>
+    <body>
+        <div class="header">
+            <div class="left-header">
+                <div class="logo-border">
+                    <img class="logo" src="pictures/d&d_logo.png">
+                </div>
+            </div>
+            <div class="middle-header">
+                <div class="header-title">Insurrection</div>
+            </div>
+            <div class="right-header">
+                <a class="aideDD-link" href="https://www.aidedd.org/" target="_blank">
+                    <div class="logo-aideDD-border">
+                        <img class="logo-aideDD" src="pictures/aideDD_logo.png">
+                    </div>
+                    <div class="aideDD-link-container">
+                        AIDE DD
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-menu joueurs" id="players-button">
+                <img class="sidebar-icon" src="icons_sidebar_svg/aventurier.svg">
+                <div class="sidebar-menu-text">joueurs</div>
+            </div>
+            <div class="sidebar-menu personnages" id="characters-button">
+                <img class="sidebar-icon" src="icons_sidebar_svg/personnage.svg">
+                <div class="sidebar-menu-text">personnages</div>
+            </div>
+            <div class="sidebar-menu carte" id="map-button">
+                <img class="sidebar-icon" src="icons_sidebar_svg/map.svg">
+                <div class="sidebar-menu-text">carte</div>
+            </div>           
+        </div>
+        <div class="page players" id="players-section">
+            <div class="grid-title">Joueurs de la partie</div>
+            <div class="grid-card">
+                <div class="card card-varam">
+                    <div class="card-image-name">
+                        <img class="card-image-varam" src="player_profile_picture/varam.png">
+                        <div class="card-name-container">
+                            <img class="card-name-ornement" src="pictures/ornement.png">
+                            <div class="card-name">Varam</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-race">Demi-orc</div>
+                        <div class="card-class">Classe : Paladin</div>
+                        <div class="card-level">Niveau : 3</div>
+                    </div>
+                </div>
+                <div class="card card-barlow">
+                    <div class="card-image-name">
+                        <img class="card-image-barlow" src="player_profile_picture/barlow.png">
+                        <div class="card-name-container">
+                            <img class="card-name-ornement" src="pictures/ornement.png">
+                            <div class="card-name">Barlow</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-race">Tieffelin</div>
+                        <div class="card-class">Classe : Ensorceleur</div>
+                        <div class="card-level">Niveau : 3</div>
+                    </div>
+                </div>
+                <div class="card card-momo">
+                    <div class="card-image-name">
+                        <img class="card-image-momo" src="player_profile_picture/momo.png">
+                        <div class="card-name-container">
+                            <img class="card-name-ornement" src="pictures/ornement.png">
+                            <div class="card-name">Momo</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-race">Nain des montagnes</div>
+                        <div class="card-class">Classe : Barbare</div>
+                        <div class="card-level">Niveau : 3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page characters" id="characters-section">
+            <div>characters page</div>
+        </div>
+        <div class="page map" id="map-section">
+            <div class="page-title">Bienvenue aux îles de Moonshae</div>
+            <div class="map-page-container">
+                <div class="map-info-container">
+                    <div class="map-info-title">Information sur la carte</div>
+                    <div class="important-place-container">
+                        <div class="important-place-title">lieux importants</div>
+                        <div class="important-places">
+                            <div class="important-place">lieu 1</div>
+                            <div class="important-place">lieu 2</div>
+                            <div class="important-place">lieu 3</div>
+                        </div>
+                    </div>
+                    <div class="visited-place-container">
+                        <div class="visited-place-title">lieux visités</div>
+                        <div class="visited-places">
+                            <div class="visited-place">lieu 1</div>
+                            <div class="visited-place">lieu 2</div>
+                            <div class="visited-place">lieu 3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div id="zoom"></div>
+                    <img class="map-image" id="map" src="./pictures/map_moonshae_isles.jpg">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

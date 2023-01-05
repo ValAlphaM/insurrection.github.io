@@ -1,0 +1,9 @@
+body {
+    margin-top: 0px;
+    margin-left: 0px;
+    background-image: url('../pictures/fond_parchemin.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    width: max-content;
+}
