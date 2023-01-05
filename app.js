@@ -50,10 +50,5 @@ document.addEventListener("DOMContentLoaded", function() {
     playersSectionButton.addEventListener("click", () => changeSection(playersSection, playersSectionButton));
     charactersSectionButton.addEventListener("click", () => changeSection(charactersSection, charactersSectionButton));
     mapSectionButton.addEventListener("click", () => changeSection(mapSection, mapSectionButton));
-    map.addEventListener("mouseenter", () => {
-        zoom.style.display = "block";
-        zoom.style.backgroundImage = url(/pictures/map_moonshae_isles.jpg);
-        zoom.style.backgroundSize = "200%";
-    });
     // ZOOM MAP ANIMATION
   });
