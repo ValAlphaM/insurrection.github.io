@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
     charactersSectionButton.addEventListener("click", () => changeSection(charactersSection, charactersSectionButton));
     mapSectionButton.addEventListener("click", () => changeSection(mapSection, mapSectionButton));
     // ZOOM MAP ANIMATION
-    mapContainer.addEventListener("mousemove", (event) => {
+    mapSection.addEventListener("mousemove", (event) => {
         let zoom = 2;
         const x = event.pageX;
         const y = event.pageY;
@@ -68,12 +68,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Disparition de la loupe si le curseur sort du cadre.
         if ((x < (mapRecCoords.left)) || (x > mapRecCoords.right) || (y < mapRecCoords.top) || (y > mapRecCoords.bottom)) {
-            loupe.style.display = "none"
-        } else if (loupe.style.display === "none") {
-
-            loupe.style.display = "block"
+            loupe.style.display = "none";
+        } else {
+            loupe.style.display = "block";
         }
-        
-
     });
   });
