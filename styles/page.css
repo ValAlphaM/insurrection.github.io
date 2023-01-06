@@ -158,16 +158,19 @@
 }
 .map-container {
     border: solid yellow;
+
 }
 .map-image {
     width: 500px;
 }
-#zoom {
+#loupe {
     position: absolute;
-    display: none;
     width: 150px;
     height: 150px;
     border: solid white;
-    background-color: red;
+    background-image: url(/pictures/map_moonshae_isles.jpg);
     border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    filter: brightness(1.1);
+    
 }
