@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     // SIDEBAR BUTTON ANIMATION
-    // Def section id
     let map = document.getElementById("map");
     let loupe = document.getElementById("loupe");
     let playersSection = document.getElementById("players-section");
@@ -9,6 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let mapSection = document.getElementById("map-section");
     let sectionArray = [playersSection, charactersSection, mapSection]
     let mapContainer = document.getElementById("map-container")
+    const mapWidth = mapContainer.offsetWidth;
+    const mapHeight = mapContainer.offsetHeight;
+    const loupeWidth = loupe.offsetWidth;
+    const loupeHeight = loupe.offsetHeight;
 
     // Def button id 
     let playersSectionButton = document.getElementById("players-button");
@@ -49,32 +52,28 @@ document.addEventListener("DOMContentLoaded", function() {
     playersSectionButton.addEventListener("click", () => changeSection(playersSection, playersSectionButton));
     charactersSectionButton.addEventListener("click", () => changeSection(charactersSection, charactersSectionButton));
     mapSectionButton.addEventListener("click", () => changeSection(mapSection, mapSectionButton));
-    
     // ZOOM MAP ANIMATION
-    mapContainer.addEventListener("mouseenter", () => {
-        let zoom = 2;
-        loupe.style.backgroundSize = zoom * 500 + "px";
-        loupe.style.display = "block";
-
-    })
     mapContainer.addEventListener("mousemove", (event) => {
         let zoom = 2;
         const x = event.pageX;
         const y = event.pageY;
-        const loupeWidth = loupe.offsetWidth;
-        const loupeHeight = loupe.offsetHeight;
-        const mapRectangle = map.getBoundingClientRect();
-        console.log(mapRectangle.right, mapRectangle.bottom, mapRectangle.left, mapRectangle.top)
-        console.log(loupeWidth, loupeHeight)
-        loupe.style.backgroundPosition = `-${(x-150) * zoom}px -${(y - 220) * zoom}px`
-        loupe.style.left = `${x - 195}px`;
-        loupe.style.top = `${y- 175}px`;
+        const mapRecCoords = map.getBoundingClientRect();
 
-        // Conditions de sortie du cadre
+        loupe.style.backgroundSize = `${mapWidth * zoom}px`
+        //Coordonnées de la loupe qui suivent le pointeur
+        loupe.style.left = `${x - mapRecCoords.left - loupeWidth/2}px`;
+        loupe.style.top = `${y - mapRecCoords.top - loupeHeight/2}px`;
+        // Déplacement du zoom
+        loupe.style.backgroundPosition = `-${(x - mapRecCoords.left + mapWidth) * zoom -loupeWidth/2 }px -${(y - mapRecCoords.top + mapHeight)* zoom - loupeHeight/2}px`;
+
+        // Disparition de la loupe si le curseur sort du cadre.
+        if ((x < (mapRecCoords.left)) || (x > mapRecCoords.right) || (y < mapRecCoords.top) || (y > mapRecCoords.bottom)) {
+            loupe.style.display = "none"
+        } else if (loupe.style.display === "none") {
+
+            loupe.style.display = "block"
+        }
         
 
     });
-    mapContainer.addEventListener("mouseleave", () => {
-        loupe.style.display = "none";
-    })
   });
