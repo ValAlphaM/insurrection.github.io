@@ -1,5 +1,5 @@
 .players {
-    display: none;
+    display: flex;
     flex-direction: column;
     position:relative;
     top: 80px;
@@ -9,7 +9,7 @@
     margin-left: 15px;
 }
 .map {
-    display: block;
+    display: none;
 }
 .characters {
     display: none;
@@ -117,7 +117,6 @@
 /* Styles for MAP SECTION*/
 .map {
     border: solid black;
-    display: flex;
     flex-direction: column;
     position: absolute;
     top: 80px;

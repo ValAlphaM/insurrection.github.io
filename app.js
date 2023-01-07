@@ -8,11 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let sectionArray = [playersSection, charactersSection, mapSection];
     let mapContainer = document.getElementById("map-container");
     let loupeCheckBox = document.getElementById("loupe-checkbox");
-    const mapWidth = mapContainer.offsetWidth;
-    const mapHeight = mapContainer.offsetHeight;
-    const loupeWidth = loupe.offsetWidth;
-    const loupeHeight = loupe.offsetHeight;
     let booleanForLoupe = true;
+    const sectionDisplay = [[playersSection, "flex"], [charactersSection, "block"], [mapSection, "flex"]]
 
     // Def button id 
     let playersSectionButton = document.getElementById("players-button");
@@ -23,11 +20,15 @@ document.addEventListener("DOMContentLoaded", function() {
     function changeSection(displaySection, displayButton) {
         for (let section of sectionArray) {
             if (section === displaySection) {
-                section.style.display = 'block';
+                for (let sectionDisp of sectionDisplay) {
+                    if (sectionDisp[0] === section){
+                        section.style.display = sectionDisp[1];
+                    }
+                };
             } else {
                 section.style.display = "none";
 
-            }
+            };
         };
         for (let button of buttonArray) {
             if (button === displayButton) {
@@ -49,6 +50,9 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         };
     }
+    function showModal () {
+        
+    }
     // Button animations
     playersSectionButton.addEventListener("click", () => changeSection(playersSection, playersSectionButton));
     charactersSectionButton.addEventListener("click", () => changeSection(charactersSection, charactersSectionButton));
@@ -57,6 +61,10 @@ document.addEventListener("DOMContentLoaded", function() {
     mapSection.addEventListener("mousemove", (event) => {
         if (booleanForLoupe) { 
             let zoom = 2;
+            const mapWidth = mapContainer.offsetWidth;
+            const mapHeight = mapContainer.offsetHeight;
+            const loupeWidth = loupe.offsetWidth;
+            const loupeHeight = loupe.offsetHeight;
             const x = event.pageX;
             const y = event.pageY;
             const mapRecCoords = map.getBoundingClientRect();
