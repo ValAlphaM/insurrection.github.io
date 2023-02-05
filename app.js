@@ -50,9 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         };
     }
-    function showModal () {
-        
-    }
     // Button animations
     playersSectionButton.addEventListener("click", () => changeSection(playersSection, playersSectionButton));
     charactersSectionButton.addEventListener("click", () => changeSection(charactersSection, charactersSectionButton));
