@@ -1,0 +1,373 @@
+:root {
+    --black--: rgb(35, 31, 32);
+    --orc-background--: rgba(16, 73, 16, 0.7);
+    --orc-font--: rgb(16, 73, 16);
+}
+
+
+.profile-container {
+    position: relative;
+    top: 10vh;
+    left: 16vw;
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1200px;
+    height: 800px;
+    border: solid black 3px;
+    border-radius: 10px;
+    gap: 20px;
+    background-color: var(--orc-background--);
+    background-image: url(../pictures/fond_parchemin.png);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Left profile part (Picture / Basics)*/
+.profile-basics {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+.profile-picture img {
+    width: 280px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: solid gray 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+.profile-constants-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+
+}
+.important-attributs-container {
+    display: flex;
+    width: 280px;
+    justify-content: space-between;
+    object-position: center;
+}
+.important-attribut-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.important-attribut {
+    position: absolute;
+    font-size: 26px;
+}
+.important-attribut-image {
+    width: 80px;
+}
+.profile-race {
+    color: var(--orc-font--);
+    font-size: 26px;;
+}
+
+/* Middle profile part (Name / Stats)*/
+.profile {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+/* Profile Name Design*/
+.profile-name-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+.profile-name-ornement {
+    width: 80%;
+    mask-image: url(/player_profile_picture/profiles/mask-ornement.png);
+}
+.profile-name {
+    position: absolute;
+    top: 14%;
+    left: 37%;
+    font-size: 45px;
+    color: var(--orc-font--);
+}
+
+
+.profile-display {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    gap: 10px;
+}
+.profile-display-header {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+    margin-left: 1px;
+}
+
+.header-category {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    height: 100%;
+    margin-left: -1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+#inventory {
+    border-bottom: solid var(--black--) 2px;
+}
+
+
+/* Profile Section Design*/ 
+
+.profile-section-container {
+    background-image: url(/pictures/fond_parchemin.png);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: solid var(--black--) 2px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    height: 550px;
+    border-radius: 10px;
+}
+
+/* Profile Attributs */
+
+.profile-attributs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.attribut-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.attribut {
+    position: absolute;
+    font-size: 26px;
+}
+.sub-attribut {
+    position: absolute;
+    bottom: 8px;
+    font-size: 18px;
+}
+.attribut-image {
+    width: 95px;
+    border-radius: 10px;
+}
+
+/* Main Section Design*/
+/* Switching between section*/ 
+
+.competences, .histoire {
+    display:none;
+}
+
+/* Histoire */
+
+.profile-section-histoire {
+    margin: 10px;
+}
+.section-title {
+    display: block;
+    border-bottom: solid black 1px;
+    font-size: 20px;
+
+}
+.section-histoire-contenu {
+    margin: 10px;
+    font-family: Philosopher;
+}
+
+/* Inventaire */
+    /* Armes */
+.inventaire-armes-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.inventaire-title {
+    height: 28px;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: solid black 2px;
+
+}
+
+.arme-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border-color: black;
+    border: solid;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 17px;
+}
+.arme-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+}
+.arme-name {
+    font-size: 20px;
+}
+.arme-container .arme-specificity {
+    opacity: 0;
+    position: absolute;
+    height: 15px;
+    width: max-content;
+    bottom: 0px;
+    right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 10px;
+    transition: opacity 0.15s;
+}
+.arme-container:hover .arme-specificity {
+    opacity: 1;
+}
+    /* Sac-à-dos */
+.sacados {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+}
+.sacados span {
+    color: var(--orc-font--);
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Sorts / Compétences section */
+.sorts-majeurs, .sorts-mineurs {
+    cursor: pointer;
+}
+.sorts-majeurs-title, .sorts-mineurs-title, .competences-title{
+    height: 20px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: solid black 2px; 
+    border-color: rgb(109, 0, 0);
+    color: rgb(109, 0, 0)
+}
+
+.sorts-container li {
+    position: relative;
+}
+.sorts-specificity {
+    visibility: visible;
+    position: absolute;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    top: -250px;
+    right: -520px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 10px;
+    background-image: url(../player_profile_picture/profiles/profile_image/fond-ph.jpg);
+    opacity: 0;
+}
+.sorts-specificity-container {
+    margin: 6px;
+}
+.sorts-level {
+    font-style: italic;
+    font-size: 13px;
+    color: black;
+}
+.sorts-attributs {
+    font-size: 14px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    color: black;
+}
+.sorts-description {
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 4px;
+    color: black;
+}
+.sorts-classe {
+    display: inline-block;
+    background-color: rgb(109, 0, 0);
+    color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 2px;
+    margin-bottom: 0px;
+    border-radius: 2px;
+}
+.sorts-ref {
+    margin-top: 3px;
+}
+.sorts-ref a{
+    cursor: pointer;
+    color: red;
+    text-decoration: none;
+    font-size: 14px;
+}
+.sorts-majeurs li:hover {
+    color: rgb(109, 0, 0)
+
+}
+.sorts-mineurs li:hover {
+    color:rgb(109, 0, 0)
+}
+
+.sorts-majeurs li:hover .sorts-specificity {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.sorts-mineurs li:hover .sorts-specificity {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+/* Compétences */
+.competences-container ul li span {
+    opacity: 0;
+    font-size: 13px;
+    
+}
+.competences-container li:hover span {
+    display: flex;
+    transition: opacity 0.5s;
+    opacity: 1;
+
+}
+.competences-container li:hover {
+    color: rgb(109, 0, 0)
+}

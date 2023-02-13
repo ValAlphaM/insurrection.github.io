@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-
+    
     let map = document.getElementById("map");
     let loupe = document.getElementById("loupe");
     let playersSection = document.getElementById("players-section");
@@ -9,7 +9,17 @@ document.addEventListener("DOMContentLoaded", function() {
     let mapContainer = document.getElementById("map-container");
     let loupeCheckBox = document.getElementById("loupe-checkbox");
     let booleanForLoupe = true;
-    const sectionDisplay = [[playersSection, "flex"], [charactersSection, "block"], [mapSection, "flex"]]
+    const sectionDisplay = [[playersSection, "flex"], [charactersSection, "block"], [mapSection, "flex"]];
+    let varamCard = document.getElementById("card-varam");
+    let barlowCard = document.getElementById("card-barlow");
+    let momoCard = document.getElementById("card-momo");
+    let cards = [varamCard, barlowCard, momoCard];
+    let varamProfile = document.getElementById("varam-profile");
+    let barlowProfile = document.getElementById("barlow-profile");
+    let momoProfile = document.getElementById("momo-profile");
+    let profiles = [varamProfile, barlowProfile, momoProfile];
+    let blurBackground = document.getElementById("blur");
+    let profileDisplay = false;
 
     // Def button id 
     let playersSectionButton = document.getElementById("players-button");
@@ -29,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 section.style.display = "none";
 
             };
+        blurBackground.style.display = 'none'
         };
         for (let button of buttonArray) {
             if (button === displayButton) {
@@ -50,10 +61,36 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         };
     }
+
+    function selectProfile(selectedProfile) {
+        blurBackground.style.display = "block";
+        for (let profile of profiles) {
+            console.log(profile)
+            if (profile === selectedProfile) {
+                profile.style.display = 'flex';
+                profiles.profile = true
+            } else {
+                profile.style.display = 'none';
+                profiles.profile = false
+            }
+        }
+    }
+
     // Button animations
     playersSectionButton.addEventListener("click", () => changeSection(playersSection, playersSectionButton));
     charactersSectionButton.addEventListener("click", () => changeSection(charactersSection, charactersSectionButton));
     mapSectionButton.addEventListener("click", () => changeSection(mapSection, mapSectionButton));
+    // DISPLAY PROFILE PLAYERS
+    varamCard.addEventListener("click", () => selectProfile(varamProfile))
+    barlowCard.addEventListener("click", () => selectProfile(barlowProfile))
+    momoCard.addEventListener("click", () => selectProfile(momoProfile))
+    blurBackground.addEventListener("click", (event) => {
+        if (event.target.className === 'background-blur') {
+            console.log("c'est gagné oh")
+            blurBackground.style.display = 'none';
+            console.log(blurBackground.style.display)
+        }
+    })
     // ZOOM MAP ANIMATION
     mapSection.addEventListener("mousemove", (event) => {
         if (booleanForLoupe) { 
