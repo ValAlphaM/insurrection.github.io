@@ -1,7 +1,14 @@
 :root {
     --black--: rgb(35, 31, 32);
     --orc-background--: rgba(16, 73, 16, 0.7);
+    --tieffelin-background--: rgba(21, 115, 131, 0.7);
+    --nain-background--: rgba(205, 79, 33, 0.7);
+    --orc-background-profile--: rgba(16, 73, 16, 0.3);
+    --tieffelin-background-profile--: rgba(21, 115, 131, 0.3);
+    --nain-background-profile--: rgba(205, 79, 33, 0.2);
     --orc-font--: rgb(16, 73, 16);
+    --tieffelin-font-- : rgba(21, 115, 131);
+    --nain-font-- : rgba(205, 79, 33);
 }
 
 
@@ -17,12 +24,20 @@
     border: solid black 3px;
     border-radius: 10px;
     gap: 20px;
-    background-color: var(--orc-background--);
     background-image: url(../pictures/fond_parchemin.png);
     background-blend-mode: multiply;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+}
+#varam-profile {
+    background-color: var(--orc-background--);
+}
+#barlow-profile {
+    background-color: var(--tieffelin-background--);
+}
+#momo-profile {
+    background-color: var(--nain-background--);
 }
 
 
@@ -71,8 +86,17 @@
     width: 80px;
 }
 .profile-race {
+    font-size: 26px;
+    text-shadow: 0px 0px 2px black;
+}
+#varam-profile .profile-race {
     color: var(--orc-font--);
-    font-size: 26px;;
+}
+#barlow-profile .profile-race {
+    color: var(--tieffelin-font--);
+}
+#momo-profile .profile-race {
+    color: var(--nain-font--);
 }
 
 /* Middle profile part (Name / Stats)*/
@@ -94,14 +118,21 @@
 }
 .profile-name-ornement {
     width: 80%;
-    mask-image: url(/player_profile_picture/profiles/mask-ornement.png);
 }
 .profile-name {
     position: absolute;
     top: 14%;
     left: 37%;
     font-size: 45px;
+}
+#varam-profile .profile-name {
     color: var(--orc-font--);
+}
+#barlow-profile .profile-name {
+    color: var(--tieffelin-font--);
+}
+#momo-profile .profile-name {
+    color: var(--nain-font--);
 }
 
 
@@ -140,11 +171,20 @@
 
 .profile-section-container {
     background-image: url(/pictures/fond_parchemin.png);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
     border: solid var(--black--) 2px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     height: 550px;
     border-radius: 10px;
+}
+#varam-profile .profile-section-container {
+    background-color: var(--orc-background-profile--);
+}
+#barlow-profile .profile-section-container {
+    background-color: var(--tieffelin-background-profile--)
+}
+#momo-profile .profile-section-container {
+    background-color: var(--nain-background-profile--);
 }
 
 /* Profile Attributs */
@@ -178,7 +218,7 @@
 /* Main Section Design*/
 /* Switching between section*/ 
 
-.competences, .histoire {
+.spells, .history {
     display:none;
 }
 
@@ -189,8 +229,8 @@
 }
 .section-title {
     display: block;
-    border-bottom: solid black 1px;
-    font-size: 20px;
+    border-bottom: solid black 2px;
+    font-size: 25px;
 
 }
 .section-histoire-contenu {
@@ -204,8 +244,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-top: 5px;
 }
 .inventaire-title {
     height: 28px;
@@ -226,29 +266,33 @@
     border-color: black;
     border: solid;
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
+    border-width: 1.5px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-top: 10px;
     cursor: pointer;
     position: relative;
     padding-bottom: 17px;
+    min-width: 170px;
 }
 .arme-image {
-    width: 90px;
     height: 90px;
+    min-width: 50px;
     border-radius: 10px;
 }
 .arme-name {
     font-size: 20px;
 }
+#momo-profile .arme-name {
+    font-size: 15px;
+}
 .arme-container .arme-specificity {
-    opacity: 0;
     position: absolute;
-    height: 15px;
-    width: max-content;
-    bottom: 0px;
-    right: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 10px;
+    opacity: 0;
+    right: 4px;
+    bottom: 3px;
+    font-size: 11px;
     transition: opacity 0.15s;
 }
 .arme-container:hover .arme-specificity {
@@ -262,11 +306,20 @@
     gap: 25px;
 }
 .sacados span {
-    color: var(--orc-font--);
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 }
+#varam-profile .sacados span {
+    color: var(--orc-font--);
+}
+#barlow-profile .sacados span {
+    color: var(--tieffelin-font--);
+}
+#momo-profile .sacados span {
+    color: var(--nain-font--);
+}
 
-/* Sorts / Compétences section */
+
+/* Sorts et Compétences section */
 .sorts-majeurs, .sorts-mineurs {
     cursor: pointer;
 }
@@ -293,11 +346,15 @@
     right: -520px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 10px;
-    background-image: url(../player_profile_picture/profiles/profile_image/fond-ph.jpg);
+    background-image: url(../player_profile_picture/fond-ph.jpg);
     opacity: 0;
 }
 .sorts-specificity-container {
     margin: 6px;
+}
+.sorts-name {
+    font-size: 18px;
+    font-weight: 700;
 }
 .sorts-level {
     font-style: italic;
@@ -358,16 +415,19 @@
 
 /* Compétences */
 .competences-container ul li span {
-    opacity: 0;
-    font-size: 13px;
-    
+    opacity: 1;
+    font-size: 0px;
 }
 .competences-container li:hover span {
     display: flex;
-    transition: opacity 0.5s;
     opacity: 1;
-
+    font-size: 13px;
+    transition: opacity 0.5s;
+}
+.competences-container li:hover strong {
+    display: flex;
 }
 .competences-container li:hover {
-    color: rgb(109, 0, 0)
+    color: rgb(109, 0, 0);
+    cursor: pointer;
 }

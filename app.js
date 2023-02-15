@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let momoProfile = document.getElementById("momo-profile");
     let profiles = [varamProfile, barlowProfile, momoProfile];
     let blurBackground = document.getElementById("blur");
-    let profileDisplay = false;
 
     // Def button id 
     let playersSectionButton = document.getElementById("players-button");
@@ -68,10 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log(profile)
             if (profile === selectedProfile) {
                 profile.style.display = 'flex';
-                profiles.profile = true
             } else {
                 profile.style.display = 'none';
-                profiles.profile = false
             }
         }
     }
