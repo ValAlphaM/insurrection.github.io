@@ -14,8 +14,8 @@
 
 .profile-container {
     position: relative;
-    top: 10vh;
-    left: 16vw;
+    top: 5vh;
+    left: 14vw;
     display: none;
     flex-direction: row;
     justify-content: space-between;
@@ -341,13 +341,14 @@
     visibility: visible;
     position: absolute;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-    width: 350px;
+    width: 300px;
     top: -250px;
-    right: -520px;
+    right: -455px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 10px;
     background-image: url(../player_profile_picture/fond-ph.jpg);
     opacity: 0;
+    z-index: 1000;
 }
 .sorts-specificity-container {
     margin: 6px;

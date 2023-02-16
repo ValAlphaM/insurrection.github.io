@@ -133,7 +133,8 @@
     display: none;
     z-index: 500;
     position: absolute;
-    top: 0px;
+    top: 2px;
+    left: 2px;
     height: 100%;
     width: 100%;
     -webkit-backdrop-filter: blur(10px);
